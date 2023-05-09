@@ -9,17 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import com.example.myapplication.FirstFragment;
 
 import com.example.myapplication.databinding.FragmentSecondBinding;
-
-import java.util.Objects;
 
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
-    FirstFragment firstFragment = new FirstFragment();
 
-    int sum = firstFragment.sum;
+FirstFragment firstFragment = new FirstFragment();
+
+int sum = firstFragment.sum;
 
     @Override
     public View onCreateView(
@@ -28,8 +28,7 @@ public class SecondFragment extends Fragment {
 
     ) {
 
-        TextView sumText = (TextView) Objects.requireNonNull(getView()).findViewById(R.id.sumId);
-        sumText.setText(String.valueOf(sum));
+        binding = FragmentSecondBinding.inflate(inflater, container, false);
 
         return binding.getRoot();
 
@@ -37,6 +36,10 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        TextView sumText = (TextView) getView().findViewById(R.id.sumId);
+        sumText.setText(String.valueOf(sum));
+        System.out.println("ss: " + sum);
+
 
 
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {

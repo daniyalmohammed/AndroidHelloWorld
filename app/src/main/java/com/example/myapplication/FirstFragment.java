@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
@@ -15,14 +16,12 @@ import com.example.myapplication.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 
-    MainActivity mainActivity = new MainActivity();
-    int firstNumber = mainActivity.firstNumber;
-    int secondNumber = mainActivity.secondNumber;
-
-    public int sum;
-    EditText firstNumberInput = mainActivity.firstNumberInput;
-    EditText secondNumberInput = mainActivity.secondNumberInput;
-    private FragmentFirstBinding binding;
+    int firstNumber, secondNumber;
+    public static int sum;
+    EditText firstNumberInput;
+    EditText secondNumberInput;
+    Button buttonFirst;
+    FragmentFirstBinding binding;
 
     @Override
     public View onCreateView(
@@ -37,19 +36,26 @@ public class FirstFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        firstNumberInput = (EditText) getView().findViewById(R.id.firstNumberInput);
+        secondNumberInput = (EditText) getView().findViewById(R.id.secondNumberInput);
+
+        buttonFirst = (Button) getView().findViewById(R.id.buttonFirst);
 
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mainActivity.firstNumberInput != null) {
-                    EditText firstNumberInput = mainActivity.firstNumberInput;
+
+                if (firstNumberInput != null) {
                     firstNumber = Integer.valueOf(firstNumberInput.getText().toString());
+                    System.out.println("1: " + firstNumber);
                 }
-                if (mainActivity.firstNumberInput != null) {
-                    EditText firstNumberInput = mainActivity.firstNumberInput;
-                    firstNumber = Integer.valueOf(firstNumberInput.getText().toString());
+                if (secondNumberInput != null) {
+                    secondNumber = Integer.valueOf(secondNumberInput.getText().toString());
+                    System.out.println("2: " + secondNumber);
                 }
+
                 sum = firstNumber + secondNumber;
+                System.out.println("fs: " + sum);
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }

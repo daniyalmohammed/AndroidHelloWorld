@@ -24,11 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    public int finalSum;
 
-    public int firstNumber, secondNumber;
-    public EditText firstNumberInput;
-    public EditText secondNumberInput;
-    public Button buttonFirst;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +40,6 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        firstNumberInput = (EditText) findViewById(R.id.firstNumberInput);
-        secondNumberInput = (EditText) findViewById(R.id.secondNumberInput);
-
-        buttonFirst = (Button) findViewById(R.id.buttonFirst);
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
