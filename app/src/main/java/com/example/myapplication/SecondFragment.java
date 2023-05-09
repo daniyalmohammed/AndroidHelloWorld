@@ -12,6 +12,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.myapplication.databinding.FragmentSecondBinding;
 
+import java.util.Objects;
+
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
@@ -26,8 +28,7 @@ public class SecondFragment extends Fragment {
 
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
-        TextView sumText = (TextView) getView().findViewById(R.id.sumId);
+        TextView sumText = (TextView) Objects.requireNonNull(getView()).findViewById(R.id.sumId);
         sumText.setText(String.valueOf(sum));
 
         return binding.getRoot();
