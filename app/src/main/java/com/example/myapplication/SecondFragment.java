@@ -27,7 +27,7 @@ public class SecondFragment extends Fragment {
     ) {
 
         binding = FragmentSecondBinding.inflate(inflater, container, false);
-        TextView sumText = (TextView) findViewById(R.id.sum);
+        TextView sumText = (TextView) findViewById(R.id.sumID);
         sumText.setText(sum);
         return binding.getRoot();
 
