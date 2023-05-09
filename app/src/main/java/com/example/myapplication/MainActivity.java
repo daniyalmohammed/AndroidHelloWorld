@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     int firstNumber, secondNumber;
     EditText firstNumberInput;
     EditText secondNumberInput;
-    Button addButton;
+    Button buttonFirst;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         firstNumberInput = (EditText) findViewById(R.id.firstNumberInput);
         secondNumberInput = (EditText) findViewById(R.id.secondNumberInput);
 
-        addButton = (Button) findViewById(R.id.addButton);
+        buttonFirst = (Button) findViewById(R.id.buttonFirst);
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
