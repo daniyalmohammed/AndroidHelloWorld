@@ -29,6 +29,7 @@ public class SecondFragment extends Fragment {
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         TextView sumText = (TextView) getView().findViewById(R.id.sumId);
         sumText.setText(String.valueOf(sum));
+
         return binding.getRoot();
 
     }
