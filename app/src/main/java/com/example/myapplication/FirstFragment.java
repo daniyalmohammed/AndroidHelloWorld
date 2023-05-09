@@ -41,8 +41,14 @@ public class FirstFragment extends Fragment {
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firstNumber = Integer.valueOf(firstNumberInput.getText().toString());
-                secondNumber = Integer.valueOf(secondNumberInput.getText().toString());
+                if (mainActivity.firstNumberInput != null) {
+                    EditText firstNumberInput = mainActivity.firstNumberInput;
+                    firstNumber = Integer.valueOf(firstNumberInput.getText().toString());
+                }
+                if (mainActivity.firstNumberInput != null) {
+                    EditText firstNumberInput = mainActivity.firstNumberInput;
+                    firstNumber = Integer.valueOf(firstNumberInput.getText().toString());
+                }
                 sum = firstNumber + secondNumber;
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);

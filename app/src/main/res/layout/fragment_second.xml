@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@id/textview_second" />
 
     <TextView
-        android:id="@+id/sum"
+        android:id="@+id/sumId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
