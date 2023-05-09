@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
-    int firstNumber, secondNumber;
-    EditText firstNumberInput;
-    EditText secondNumberInput;
-    Button buttonFirst;
+    public int firstNumber, secondNumber;
+    public EditText firstNumberInput;
+    public EditText secondNumberInput;
+    public Button buttonFirst;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

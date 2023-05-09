@@ -4,15 +4,24 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+
 import com.example.myapplication.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 
+    MainActivity mainActivity = new MainActivity();
+    int firstNumber = mainActivity.firstNumber;
+    int secondNumber = mainActivity.secondNumber;
+
+    public int sum;
+    EditText firstNumberInput = mainActivity.firstNumberInput;
+    EditText secondNumberInput = mainActivity.secondNumberInput;
     private FragmentFirstBinding binding;
 
     @Override
@@ -32,6 +41,9 @@ public class FirstFragment extends Fragment {
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                firstNumber = Integer.valueOf(firstNumberInput.getText().toString());
+                secondNumber = Integer.valueOf(secondNumberInput.getText().toString());
+                sum = firstNumber + secondNumber;
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
