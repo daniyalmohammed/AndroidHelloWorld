@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,7 +22,6 @@ public class FirstFragment extends Fragment {
     EditText secondNumberInput;
     Button buttonFirst;
     FragmentFirstBinding binding;
-    Spinner op;
 
     @Override
     public View onCreateView(
@@ -40,7 +38,6 @@ public class FirstFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         firstNumberInput = (EditText) getView().findViewById(R.id.firstNumberInput);
         secondNumberInput = (EditText) getView().findViewById(R.id.secondNumberInput);
-        operation = (Spinner) getView().findViewById(R.id.operations);
 
         buttonFirst = (Button) getView().findViewById(R.id.buttonFirst);
 
@@ -57,26 +54,7 @@ public class FirstFragment extends Fragment {
                     System.out.println("2: " + secondNumber);
                 }
 
-                switch (operation) {
-                    case 1:
-                        sum = firstNumber + secondNumber;
-                        break;
-                    case 2:
-                        sum = firstNumber - secondNumber;
-                        break;
-                    case 3:
-                        sum = firstNumber * secondNumber;
-                        break;
-                    case 4:
-                        sum = (int) Math.floor(firstNumber / secondNumber);
-                        break;
-                    case 5:
-                        sum = firstNumber % secondNumber;
-                        break;
-                    case 6:
-                        sum = (int) Math.pow(firstNumber, secondNumber);
-                        break;
-
+                sum = firstNumber + secondNumber;
                 System.out.println("fs: " + sum);
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
