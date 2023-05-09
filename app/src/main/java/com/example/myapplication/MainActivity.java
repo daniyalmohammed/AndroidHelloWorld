@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         firstNumberInput = (EditText) findViewById(R.id.firstNumberInput);
+        secondNumberInput = (EditText) findViewById(R.id.secondNumberInput);
+
+        addButton = (Button) findViewById(R.id.addButton);
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
